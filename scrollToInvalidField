@@ -1,0 +1,40 @@
+  
+private el: ElementRef
+
+
+  // Scroll to invalid field
+  private scrollToFirstInvalidControl() {
+    const firstInvalidControl: HTMLElement = this.el.nativeElement.querySelector(
+      "form .mat-form-field-invalid"
+    );
+
+    if(this.getTopOffset(firstInvalidControl) != null){
+      this.hola = this.getTopOffset(firstInvalidControl)
+    }else{
+      console.log('Problema con el scroll')
+    }
+
+    window.scroll({
+      top: this.hola,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
+  private getTopOffset(controlEl: HTMLElement): number {
+    const labelOffset = 50;
+    return controlEl.getBoundingClientRect().top + window.scrollY - labelOffset;
+  }
+
+
+// Devolver controls invalidos
+public findInvalidControls() {
+    const invalid = [];
+    const controls = this.formData.newForm.controls;
+    for (const name in controls) {
+        if (controls[name].invalid) {
+            invalid.push(name);
+        }
+    }
+    return invalid;
+}
