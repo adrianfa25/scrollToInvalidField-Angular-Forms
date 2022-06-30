@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: moodle-probando-qa
+  name: moodle-probando2-qa
   labels:
     k10/injectKanisterSidecar: "true"
   annotations:
