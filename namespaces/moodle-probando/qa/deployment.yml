@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: moodle-app
-  namespace: moodle-probandoqa
+  namespace: moodle-probando-qa
   annotations:
     k10.kasten.io/forcegenericbackup: "true"
 spec:
