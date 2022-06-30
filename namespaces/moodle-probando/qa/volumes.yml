@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: moodledata-pvc
-  namespace: moodle-probando2-qa
+  namespace: moodle-probandoqa
   annotations:
     kustomize.toolkit.fluxcd.io/prune: disabled
 spec:

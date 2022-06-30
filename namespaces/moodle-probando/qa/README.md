@@ -1,4 +1,4 @@
-flux create kustomization moodle-probando2-qa
+flux create kustomization moodle-probandoqa
 		--source=flux-system
 		--path="./st-eks-003"
 		--prune=true

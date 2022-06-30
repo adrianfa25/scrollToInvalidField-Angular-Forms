@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: moodle-app-svc
-  namespace: moodle-probando2-qa
+  namespace: moodle-probandoqa
 spec:
   ports:
     - port: 8080
