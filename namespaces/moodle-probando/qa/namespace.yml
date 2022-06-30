@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: moodle-probando-qa
+  labels:
+    k10/injectKanisterSidecar: "true"
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: disabled

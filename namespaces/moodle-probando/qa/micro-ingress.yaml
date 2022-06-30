@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: micro-ingress
+  namespace: moodle-probando-qa
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt"
+
+    nginx.ingress.kubernetes.io/proxy-body-size: 512M
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+spec:
+  tls:
+    - hosts:
+      - lms.probando.qa.smartraining.cl
+      secretName: elnombresecreto
+  rules:
+
+  - host: "lms.probando.qa.smartraining.cl"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: moodle-app-svc
+            port:
+              number: 8080
