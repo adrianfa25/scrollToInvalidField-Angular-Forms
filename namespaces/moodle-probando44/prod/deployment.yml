@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moodle-app
+  namespace: moodle-probando44-prod
+  annotations:
+    k10.kasten.io/forcegenericbackup: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moodle-app
+  template:
+    metadata:
+      labels:
+        app: moodle-app
+    spec:
+      containers:
+      - name: moodle-app
+        image: 079581620263.dkr.ecr.us-east-1.amazonaws.com/moodle-base:2.2.8 # {"$imagepolicy": "flux-system:moodle-base-policy"}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+          name: env-configmap
+        volumeMounts:
+        - name: moodledata
+          mountPath: /var/www/moodledata
+      volumes:
+      - name: moodledata
+        persistentVolumeClaim:
+          claimName: moodledata-pvc
