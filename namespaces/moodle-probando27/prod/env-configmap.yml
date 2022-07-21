@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+  namespace: moodle-probando27-prod
+data:
+  WWWROOT: lms.probando27.smartraining.cl
+  DEBUG: "false"
+  DB_HOST: st-db-003.ctxpvnqvbrjv.sa-east-1.rds.amazonaws.com
+  DB_NAME: moodle-probando27-prod
+  DB_USER: moodle-probando27-prod
+  DB_PASSWORD: 4M5ObqHvf6EanaFq
+  REDIS_HOST: st-redis-001.3sehhh.0001.sae1.cache.amazonaws.com
+  BASE_MOODLEDATA: ""
+  BASE_SQL: ""
