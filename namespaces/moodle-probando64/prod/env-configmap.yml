@@ -9,7 +9,7 @@ data:
   DB_HOST: st-db-003.ctxpvnqvbrjv.sa-east-1.rds.amazonaws.com
   DB_NAME: moodle-probando64-prod
   DB_USER: moodle-probando64-prod
-  DB_PASSWORD: hvr3QsUZdUf7Nzhi
+  DB_PASSWORD: rZGGol2NTjlopMzs
   REDIS_HOST: st-redis-001.3sehhh.0001.sae1.cache.amazonaws.com
   BASE_MOODLEDATA: ""
   BASE_SQL: ""
